@@ -45,7 +45,7 @@ We can use instruction tuning on MusicCaps to perform captioning tasks by giving
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_musiccaps.yaml
 ```
 #### 2.2 MusicInstruct 
-We can run instruction tuning on the whole MI dataset, or only on either the long or the short questions.
+We can run instruction tuning on the whole MI dataset, or only on either the long or the short questions.\\
 For the whole MI dataset:
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_cmi.yaml
