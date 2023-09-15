@@ -13,11 +13,12 @@ pip install requirements.txt
 
 
 ## Data Preparation
-### 1. MusicCaps 
+### 1. LP-MusicCaps-MSD
+### 2. MusicCaps 
 First create a directory named ```music_data/```, and put the processed data ```MusicCaps_audio/``` and ```MusicCaps_ann/``` into the directory. Then go to ```muvi/configs/datasets/musiccaps/default.yaml``` and set ```data_dir``` to be ```PATH/TO/music_data/```.
-### 2. LP-MusicCaps
-### 3. MusicQA
-### 4. MusicInstruct
+### 3. MusicInstruct (MI)
+### 4. MusicQA
+
 
 ## Model Preparation
 ### Vicuna
@@ -31,8 +32,34 @@ Vicuna_7B
 Currently we use Vicuna 7B by default. Finally, go to ```musilingo/configs/models/musilingo.yaml``` and set ```llama_model``` to be ```PATH/TO/Vicuna_7B/```.
 
 ## Training
-### 1. First stage pretraining
-Run the following command to pretrain the model. Set ```NUM_GPU``` to be the actual available number of gpus on your node. 
+### 1. Pretraining with LP-MusicCaps-MSD
+Run the following command to pretrain the model. Set ```NUM_GPU``` to be the actual available number of gpus. 
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/muvi_stage1_pretrain.yaml
+```
+### 2. Instruction Finetuing
+For each dataset, run the command provided in the corresponding section. Again, set ```NUM_GPU``` to be the actual available number of gpus. 
+#### 2.1 MusicCaps
+We can use instruction tuning on MusicCaps to perform captioning tasks by giving a default question prompt.
+```
+torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_musiccaps.yaml
+```
+#### 2.2 MusicInstruct 
+We can run instruction tuning on the whole MI dataset, or only on either the long or the short questions.
+For the whole MI dataset:
+```
+torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_cmi.yaml
+```
+For the short question version:
+```
+torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_cmi_short.yaml
+```
+For the long question version:
+```
+torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_cmi_long.yaml
+```
+#### 2.3 MusicQA 
+Run the following command to finetuning on MusicQA:
+```
+torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_musicqa.yaml
 ```
