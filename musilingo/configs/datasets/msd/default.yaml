@@ -1,0 +1,5 @@
+datasets:
+  msd:
+    processor: 'm-a-p/MERT-v1-330M'
+    split: 'train'
+    data_dir: "/path/to/MSD"

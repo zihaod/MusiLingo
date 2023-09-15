@@ -1,0 +1,21 @@
+model:
+  arch: musilingo
+  model_type: pretrain_vicuna
+  mert_model: 'm-a-p/MERT-v1-330M'
+  llama_model: '/path/to/7B_vicuna'
+  ckpt: 'path/to/checkpoint'
+  prompt_template: '###Human: {} ###Assistant: '
+  end_sym: "###"
+  max_txt_len: 160
+
+
+
+datasets:
+  musicqa:
+    data_type: audios
+    processor: 'm-a-p/MERT-v1-330M'
+
+
+
+run:
+  task: audio_text_pretrain

@@ -1,0 +1,13 @@
+model:
+  arch: musilingo
+
+  # audio encoder
+  mert_model: 'm-a-p/MERT-v1-330M'
+
+  # Vicuna
+  llama_model: '/path/to/7B_vicuna'
+
+  # generation configs
+  prompt: ""
+
+
