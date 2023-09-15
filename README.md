@@ -1,13 +1,13 @@
-# MUVI
-This repo contains the code for MERT-Vicuna adaptation model.
+# MusiLingo
+This repo contains the code for the MusiLingo model.
 
 ## Environment setup
 To get started, git clone the repo and install the required dependencies using the following commands:
 ```
-git clone https://github.com/zihaod/MUVI
-cd MUVI
-conda create -n muvi python=3.10.6
-conda activate muvi
+git clone https://github.com/zihaod/MusiLingo
+cd MusiLingo
+conda create -n musilingo python=3.10.6
+conda activate musilingo
 pip install requirements.txt
 ```
 
