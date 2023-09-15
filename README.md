@@ -60,7 +60,7 @@ For the long question version:
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_cmi_long.yaml
 ```
 #### 2.3 MusicQA 
-Run the following command to finetuning on MusicQA:
+Run the following command to finetune on MusicQA:
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_musicqa.yaml
 ```
