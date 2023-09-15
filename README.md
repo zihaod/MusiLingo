@@ -21,14 +21,14 @@ First create a directory named ```music_data/```, and put the processed data ```
 
 ## Model Preparation
 ### Vicuna
-You need to prepare the pretrained Vicuna weights following instructions [here](PrepareVicuna.md). Once you have the weights, create a folder named ```vicuna_weights``` and put the weights under this folder. The final contents should look like this:
+You need to prepare the pretrained Vicuna weights following instructions [here](PrepareVicuna.md). Once you have the weights, create a folder named ```Vicuna_7B``` and put the weights under this folder. The final contents should look like this:
 ```
-vicuna_weights
+Vicuna_7B
 ├── config.json
 ├── generation_config.json
 ├── pytorch_model-00001-of-00002.bin
 ```
-Note that currently we use Vicuna 7B, but the weights could come from a larger version. Finally, go to ```muvi/configs/models/muvi.yaml``` and set ```llama_model``` to be ```PATH/TO/vicuna_weights/```.
+Currently we use Vicuna 7B by default. Finally, go to ```musilingo/configs/models/musilingo.yaml``` and set ```llama_model``` to be ```PATH/TO/Vicuna_7B/```.
 
 ## Training
 ### 1. First stage pretraining
