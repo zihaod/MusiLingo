@@ -35,7 +35,7 @@ Currently we use Vicuna 7B by default. Finally, go to ```musilingo/configs/model
 ### 1. Pretraining with LP-MusicCaps-MSD
 Run the following command to pretrain the model. Set ```NUM_GPU``` to be the actual available number of gpus. 
 ```
-torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/muvi_stage1_pretrain.yaml
+torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage1_pretrain.yaml
 ```
 ### 2. Instruction Finetuing
 For each dataset, run the command provided in the corresponding section. Again, set ```NUM_GPU``` to be the actual available number of gpus. 
