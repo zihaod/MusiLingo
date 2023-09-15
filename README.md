@@ -15,6 +15,9 @@ pip install requirements.txt
 ## Data Preparation
 ### 1. MusicCaps 
 First create a directory named ```music_data/```, and put the processed data ```MusicCaps_audio/``` and ```MusicCaps_ann/``` into the directory. Then go to ```muvi/configs/datasets/musiccaps/default.yaml``` and set ```data_dir``` to be ```PATH/TO/music_data/```.
+### 2. LP-MusicCaps
+### 3. MusicQA
+### 4. MusicInstruct
 
 ## Model Preparation
 ### Vicuna
