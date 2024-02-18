@@ -72,4 +72,4 @@ Download the pretrained model checkpoints
 
 | MusiLingo (long) | MusiLingo (MusicQA) | MusiLingo (short)| 
 |------------------------------|------------------------------|------------------------------|
-| [Download](https://drive.google.com/file/d/1Vi_E7ZtZXRAQcyz4f8E6LtLh2UXABCmu/view?usp=sharing) |[Download](https://drive.google.com/file/d/1HkoUUrjzFGn33cSiUkI-KcT-zysCynAz/view?usp=sharing) | [Download](https://drive.google.com/file/d/16LFAK3dM2a3xlU3SvgToa3DboImndjLU/view?usp=drive_link) |
+| [Download](https://drive.google.com/file/d/1FtPRHVL3w0CYMTmR2Bpju9knYKIPMlzC/view?usp=drive_link) |[Download](https://drive.google.com/file/d/1-jK5PKU0ZCNIu5F7JAqr5S-Ei_urgYei/view?usp=drive_link) | [Download](https://drive.google.com/file/d/16LFAK3dM2a3xlU3SvgToa3DboImndjLU/view?usp=drive_link) |
