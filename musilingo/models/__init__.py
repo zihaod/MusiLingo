@@ -11,14 +11,14 @@ from omegaconf import OmegaConf
 
 from musilingo.common.registry import registry
 from musilingo.models.base_model import BaseModel
-from musilingo.models.muvi_model import MUVI
+from musilingo.models.muvi_model import MusiLingo
 from musilingo.processors.base_processor import BaseProcessor
 
 
 __all__ = [
     "load_model",
     "BaseModel",
-    "MUVI",
+    "MusiLingo",
 ]
 
 
