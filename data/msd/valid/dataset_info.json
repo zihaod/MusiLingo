@@ -1,0 +1,108 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "seungheondoh--LP-MusicCaps-MSD",
+  "dataset_size": 607245348,
+  "description": "",
+  "download_checksums": {
+    "https://huggingface.co/datasets/seungheondoh/LP-MusicCaps-MSD/resolve/6742bcb0baa52ce5ca10c0279725774789e7729e/data/train-00000-of-00002-557f11f5f8c72ffa.parquet": {
+      "num_bytes": 128080906,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/seungheondoh/LP-MusicCaps-MSD/resolve/6742bcb0baa52ce5ca10c0279725774789e7729e/data/train-00001-of-00002-841359b23dd9a178.parquet": {
+      "num_bytes": 117626302,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/seungheondoh/LP-MusicCaps-MSD/resolve/6742bcb0baa52ce5ca10c0279725774789e7729e/data/test-00000-of-00001-dcf74b4dfad2da31.parquet": {
+      "num_bytes": 20463141,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/seungheondoh/LP-MusicCaps-MSD/resolve/6742bcb0baa52ce5ca10c0279725774789e7729e/data/valid-00000-of-00001-bc348328eb4115ed.parquet": {
+      "num_bytes": 20591913,
+      "checksum": null
+    }
+  },
+  "download_size": 286762262,
+  "features": {
+    "track_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "title": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "artist_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "release": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "year": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "tag": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "caption_writing": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "caption_summary": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "caption_paraphrase": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "caption_attribute_prediction": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "path": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 894007610,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 519219598,
+      "num_examples": 444865,
+      "shard_lengths": [
+        432433,
+        12432
+      ],
+      "dataset_name": "parquet"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 43889600,
+      "num_examples": 34631,
+      "dataset_name": "parquet"
+    },
+    "valid": {
+      "name": "valid",
+      "num_bytes": 44136150,
+      "num_examples": 34481,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
