@@ -1,5 +1,6 @@
 # MusiLingo
-This repo contains the code for the MusiLingo model.
+This repo contains the code for the following paper. 
+__[MusiLingo: Bridging Music and Text with Pre-trained Language Models for Music Captioning and Query Response](https://arxiv.org/abs/2309.08730)__
 
 ## Environment setup
 To get started, git clone the repo and install the required dependencies using the following commands:
@@ -8,21 +9,24 @@ git clone https://github.com/zihaod/MusiLingo
 cd MusiLingo
 conda create -n musilingo python=3.10.6
 conda activate musilingo
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 
 ## Data Preparation
 ### 1. LP-MusicCaps-MSD
+The MusiLingo model is pre-trained on LP-MusicCaps-MSD dataset and we only provide the annotation of the dataset in this repo under ```data/music_data/msd`````. The audio is part of the Million Song Dataset (MSD) which you may not be able to download from Internet easily.
 ### 2. MusicCaps 
-First create a directory named ```music_data/```, and put the processed data ```MusicCaps_audio/``` and ```MusicCaps_ann/``` into the directory. Then go to ```muvi/configs/datasets/musiccaps/default.yaml``` and set ```data_dir``` to be ```PATH/TO/music_data/```.
+We provide a copy of annotation of MusicCaps dataset under ```data/music_data/MusicCaps_ann```. The audio is part of Google's AudioSet and you can download it from YouTube.
 ### 3. MusicInstruct (MI)
+We develop MI dataset and saved under ```data/music_data/MusicInstruct```. The audios are identical with MusicCaps. You can also find more information at the [Huggingface page](https://huggingface.co/datasets/m-a-p/Music-Instruct/tree/main).
 ### 4. MusicQA
+You can doanloaw the MusicQA dataset to ```data/music_data/MusicQA``` from Huggingface.
 
 
 ## Model Preparation
 ### Vicuna
-You need to prepare the pretrained Vicuna weights following instructions [here](PrepareVicuna.md). Once you have the weights, create a folder named ```Vicuna_7B``` and put the weights under this folder. The final contents should look like this:
+You need to prepare the pretrained Vicuna weights following instructions [here](PrepareVicuna.md). Once you have the weights, put the weights under the ```model/7B_vicuna``` folder. The final contents should look like this:
 ```
 Vicuna_7B
 ├── config.json
@@ -30,6 +34,8 @@ Vicuna_7B
 ├── pytorch_model-00001-of-00002.bin
 ```
 Currently we use Vicuna 7B by default. Finally, go to ```musilingo/configs/models/musilingo.yaml``` and set ```llama_model``` to be ```PATH/TO/Vicuna_7B/```.
+### MERT
+We use MERT-v1-330M as music encoder for MusiLingo model. You can download it from [Huggingface page](https://huggingface.co/m-a-p/MERT-v1-330M) to ```model/MERT-v1-330M```
 
 ## Training
 ### 1. Pretraining with LP-MusicCaps-MSD
@@ -65,11 +71,29 @@ Run the following command to finetune on MusicQA:
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_stage2_finetune_musicqa.yaml
 ```
 
-## Model Checkpoints
+## Inference
+To do the inference on MusicInstruct dataset, use the following code
+```Python qa.py --qa_type short```
+```Python qa.py --qa_type long```
+### Model Checkpoints
 
-Download the pretrained model checkpoints
+If you cannot download from the ckpt in this repo, you can download the pretrained model checkpoints
 
 
 | MusiLingo (long) | MusiLingo (MusicQA) | MusiLingo (short)| 
 |------------------------------|------------------------------|------------------------------|
 | [Download](https://drive.google.com/file/d/1FtPRHVL3w0CYMTmR2Bpju9knYKIPMlzC/view?usp=drive_link) |[Download](https://drive.google.com/file/d/1-jK5PKU0ZCNIu5F7JAqr5S-Ei_urgYei/view?usp=drive_link) | [Download](https://drive.google.com/file/d/16LFAK3dM2a3xlU3SvgToa3DboImndjLU/view?usp=drive_link) |
+| ```model/ckpt/long/``` | ```model/ckpt/musicqa/``` | ```model/ckpt/short/``` |
+
+## Citing This Work
+
+If you find the work useful for your research, please consider citing it using the following BibTeX entry:
+```
+@inproceedings{deng2024musilingo,
+  title={MusiLingo: Bridging Music and Text with Pre-trained Language Models for Music Captioning and Query Response},
+  author={Deng, Zihao and Ma, Yinghao and Liu, Yudong and Guo, Rongchen and Zhang, Ge and Chen, Wenhu and Huang, Wenhao and Benetos, Emmanouil},
+  booktitle={Proceedings of the 2024 Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL 2024)},
+  year={2024},
+  organization={Association for Computational Linguistics}
+}
+```
