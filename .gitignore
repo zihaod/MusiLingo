@@ -1,0 +1,18 @@
+# pre-trained LLMs' ckpt
+model/7B_vicuna/*
+model/ckpt/*/*
+model/MERT-v1-330M/*
+
+# cache
+musilingo/__pycache__
+musilingo/*/__pycache__
+musilingo/datasets/*/__pycache__
+
+# audio of dataset
+data/music_data/MusicCaps_audio
+# unused large file annotation which you can doanloaw from huggingface
+data/music_data/MusicInstruct/music_instruct.json
+data/music_data/MusicInstruct/music_instruct_old.json
+data/music_data/MusicInstruct/music_instruct_nan.json
+data/msd/train/data-00000-of-00002.arrow
+data/msd/train/data-00001-of-00002.arrow
