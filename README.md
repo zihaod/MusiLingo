@@ -2,6 +2,8 @@
 This repo contains the code for the following paper. 
 __[MusiLingo: Bridging Music and Text with Pre-trained Language Models for Music Captioning and Query Response](https://arxiv.org/abs/2309.08730)__
 
+You can also refer to our [Huggingface collection](https://huggingface.co/collections/m-a-p/musilingo-660ea663da171832d5722c51) for quick start.
+
 ## Environment setup
 To get started, git clone the repo and install the required dependencies using the following commands:
 ```
@@ -33,7 +35,7 @@ Vicuna_7B
 ├── generation_config.json
 ├── pytorch_model-00001-of-00002.bin
 ```
-Currently we use Vicuna 7B by default. Finally, go to ```musilingo/configs/models/musilingo.yaml``` and set ```llama_model``` to be ```PATH/TO/Vicuna_7B/```.
+Currently we use Vicuna 7B v0 by default. Finally, go to ```musilingo/configs/models/musilingo.yaml``` and set ```llama_model``` to be ```PATH/TO/Vicuna_7B/```. Alternatively, you can also set it to the huggingface path ```lmsys/vicuna-7b-delta-v0```.
 ### MERT
 We use MERT-v1-330M as music encoder for MusiLingo model. You can download it from [Huggingface page](https://huggingface.co/m-a-p/MERT-v1-330M) to ```model/MERT-v1-330M```
 
