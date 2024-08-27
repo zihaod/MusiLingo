@@ -17,13 +17,13 @@ pip install -r requirements.txt
 
 ## Data Preparation
 ### 1. LP-MusicCaps-MSD
-The MusiLingo model is pre-trained on LP-MusicCaps-MSD dataset and we only provide the annotation of the dataset in this repo under ```data/music_data/msd`````. The audio is part of the Million Song Dataset (MSD) which you may not be able to download from Internet easily.
+The MusiLingo model is pre-trained on LP-MusicCaps-MSD dataset and we only provide the annotation of the dataset in this repo under ```data/music_data/msd```. The audio is part of the Million Song Dataset (MSD) which you may not be able to download from Internet easily.
 ### 2. MusicCaps 
 We provide a copy of annotation of MusicCaps dataset under ```data/music_data/MusicCaps_ann```. The audio is part of Google's AudioSet and you can download it from YouTube.
 ### 3. MusicInstruct (MI)
 We develop MI dataset and saved under ```data/music_data/MusicInstruct```. The audios are identical with MusicCaps. You can also find more information at the [Huggingface page](https://huggingface.co/datasets/m-a-p/Music-Instruct/tree/main).
 ### 4. MusicQA
-You can doanloaw the MusicQA dataset to ```data/music_data/MusicQA``` from Huggingface.
+You can download the MusicQA dataset to ```data/music_data/MusicQA``` from Huggingface.
 
 
 ## Model Preparation
@@ -74,9 +74,9 @@ torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/musilingo_st
 ```
 
 ## Inference
-To do the inference on MusicInstruct dataset, use the following code
-```Python qa.py --qa_type short```
-```Python qa.py --qa_type long```
+To do the inference on MusicInstruct dataset, run
+```python qa.py --qa_type short``` for short questions, and
+```python qa.py --qa_type long``` for long questinos
 ### Model Checkpoints
 
 If you cannot download from the ckpt in this repo, you can download the pretrained model checkpoints
